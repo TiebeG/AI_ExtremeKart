@@ -8,8 +8,8 @@ from pathlib import Path
 # CONFIG
 # ============================================================
 
-DATA_PATH = "../laptimes_v5.csv"   # same CSV you used for training
-MODELS_DIR = Path("../models")
+DATA_PATH = "laptimes_v5.csv"   # same CSV you used for training
+MODELS_DIR = Path("models")
 
 
 # ============================================================
