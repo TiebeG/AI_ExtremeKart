@@ -163,11 +163,11 @@ def main():
     st.title("🏁 Extreme Kart Lap Time Predictor")
     st.markdown(
         """
-        This app uses historical indoor karting data from **Extreme Kart** to predict **best lap times**.
+        This app uses historical indoor karting data from **Extreme Kart** to predict **average lap times**.
 
         You can:
-        1. Select a **driver** → see predicted best lap per **kart**.  
-        2. Select **driver + kart** → predicted best lap.  
+        1. Select a **driver** → see predicted avgerage lap times per **kart**.  
+        2. Select **driver + kart** → predicted average laps.  
         3. Select **driver + kart + session** → more specific prediction.
         """
     )
