@@ -13,8 +13,8 @@ import joblib
 # 1. CONFIG
 # ============================================================
 
-DATA_PATH = "../laptimes_v5.csv"   # adjust if needed
-MODELS_DIR = Path("../models")
+DATA_PATH = "laptimes_v6.csv"   # adjust if needed
+MODELS_DIR = Path("models")
 MODELS_DIR.mkdir(exist_ok=True)
 
 # Just used in the example block at the bottom
