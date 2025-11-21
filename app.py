@@ -127,9 +127,9 @@ def predict_per_kart(
     for kart in sorted(df_track["Kart"].unique(), key=str):
         X_pred = build_feature_row(df_track, driver=driver, kart=kart, session=session)
         pred = float(model.predict(X_pred)[0])
-        results.append({"Kart": kart, "Predicted best lap (s)": pred})
+        results.append({"Kart": kart, "Predicted avg laps (s)": pred})
 
-    return pd.DataFrame(results).sort_values("Predicted best lap (s)")
+    return pd.DataFrame(results).sort_values("Predicted avg laps (s)")
 
 
 def predict_driver_kart(
@@ -204,9 +204,9 @@ def main():
         st.image(
             str(image_path),
             caption=f"Track {track_id}",
-            use_container_width=True,
+            use_container_width=False, width=300
         )
-    else:
+    else:   
         st.info(f"Track image not found for track {track_id} (expected `{image_path.name}`).")
 
     df_track = df_all[df_all["Track"] == track_id].copy()
@@ -263,7 +263,7 @@ def main():
                     driver=driver,
                     session=session_selected,
                 )
-                df_pred["Predicted best lap (s)"] = df_pred["Predicted best lap (s)"].round(3)
+                df_pred["Predicted avg laps (s)"] = df_pred["Predicted avg laps (s)"].round(3)
                 st.dataframe(df_pred, use_container_width=True)
             except Exception as e:
                 st.error(f"Prediction error: {e}")
@@ -285,7 +285,7 @@ def main():
                     session=session_selected,
                 )
                 st.metric(
-                    label="Predicted best lap (s)",
+                    label="Predicted avg laps (s)",
                     value=f"{pred:.3f}",
                 )
 
